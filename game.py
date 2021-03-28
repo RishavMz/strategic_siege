@@ -1,12 +1,14 @@
 import pygame
 from data.troops import *
 from data.defenses import *
+from data.levels import *
+
 import math
 
-pygame.init()
 WIDTH = 700
 HEIGHT = 600
 state = 0
+level = 0
 
 
 class Table:
@@ -39,6 +41,16 @@ class Cards:
         pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx,self.posy, self.width, self.height))     
    
 
+def assemble():
+    for i in levels[level].showcards():
+        cards.append(Cards(table1,i[0],i[1],i[2])) 
+
+    for i in levels[level].showdefenses():
+        if(i[0]==1):
+            defence.append(Cannon(table1,i[1],i[2]))
+        elif(i[0]==2):
+            defence.append(Tower(table1,i[1],i[2]))
+
 
 
 table1 = Table(WIDTH, HEIGHT)
@@ -47,12 +59,10 @@ Table_name="Battle_Machine"
 run = True
 army = []
 cards = []
-defence = []
+defence = []    
 
-cards.append(Cards(table1, 40,1,10))
-cards.append(Cards(table1,100,2,10))
-cards.append(Cards(table1,160,3,5))
-cards.append(Cards(table1,220,4,2))
+assemble()
+
 infantryImage = pygame.image.load('images/infantry.png')
 archerImage = pygame.image.load('images/archer.png')
 cavalryImage = pygame.image.load('images/cavalry.png')
@@ -66,10 +76,17 @@ def distanceCalc(body1, body2):
     return math.sqrt((body1.posx - body2.posx)**2 + (body1.posy - body2.posy)**2)
 
 
+play = 0
 
 while run:
     table1.draw(Table_name)
-    
+    if(len(army)>0):
+        play = 1
+    if(play==1 and len(defence)==0):
+        army=[]
+        cards = []
+        level += 1
+        assemble()
     fallen = []
     for i in range(len(army)):
         army[i].draw()
@@ -149,14 +166,6 @@ while run:
                     if(cards[3].number>0):
                         army.append(HeavyCavalry(table1,pos[0],pos[1]))
                         cards[3].number -= 1
-
-            elif(pos[1]>=100 and pos[0]>510):
-                if(state==11):
-                    defence.append(Cannon(table1,pos[0],pos[1]))
-                elif(state==12):
-                    defence.append(Tower(table1,pos[0],pos[1]))  
-
-
 
 
     displaySpace.blit(infantryImage,(cards[0].posx,cards[0].posy))

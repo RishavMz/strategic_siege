@@ -6,7 +6,7 @@ class Infantry:
         self.posx = posx
         self.posy = posy
         self.health = 20
-        self.strength = 0.8
+        self.strength = 2
         self.speed = 5
         self.table = table
         self.rad = 11
@@ -32,7 +32,7 @@ class Archer:
         self.posx = posx
         self.posy = posy
         self.health = 15
-        self.strength = 2
+        self.strength = 0.9
         self.speed = 8
         self.table = table
         self.rad = 9
