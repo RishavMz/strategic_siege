@@ -6,13 +6,13 @@ class Cannon:
     def __init__(self,table,posx,posy):
         self.table = table
         self.power = 0.6
-        self.health = 20
+        self.health = 150
         self.posx = posx
         self.posy = posy
         self.rad=15
         self.rangeatt = 200
-    def getHP(self):
-        return self.health
+    def damage(self,force):
+        self.health -= force
     def draw(self):
         pygame.draw.circle(self.table.canvas, (192,192,192), (self.posx-self.rad//2, self.posy-self.rad//2), self.rad) 
         pygame.draw.rect(self.table.canvas, (255,0,0), (self.posx-18,self.posy-30, (self.health), 2))     
@@ -30,13 +30,13 @@ class Tower:
     def __init__(self,table,posx,posy):
         self.table = table
         self.power = 0.2
-        self.health = 20
+        self.health = 100
         self.posx = posx
         self.posy = posy
         self.rad=10
         self.rangeatt = 400
-    def getHP(self):
-        return self.health
+    def damage(self,force):
+        self.health -= force
     def draw(self):
         pygame.draw.circle(self.table.canvas, (139,69,19), (self.posx-self.rad//2, self.posy-self.rad//2), self.rad) 
         pygame.draw.rect(self.table.canvas, (255,0,0), (self.posx-15,self.posy-25, (self.health), 2))     

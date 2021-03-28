@@ -53,6 +53,11 @@ cards.append(Cards(table1, 40,1,10))
 cards.append(Cards(table1,100,2,10))
 cards.append(Cards(table1,160,3,5))
 cards.append(Cards(table1,220,4,2))
+infantryImage = pygame.image.load('images/infantry.png')
+archerImage = pygame.image.load('images/archer.png')
+cavalryImage = pygame.image.load('images/cavalry.png')
+heavycavalryImage = pygame.image.load('images/heavycavalry.png')
+displaySpace = pygame.display.set_mode((600,700))
 
 cards.append(Cards(table1,530,11,4))
 cards.append(Cards(table1,590,12,6))
@@ -71,10 +76,7 @@ while run:
         if(army[i].health<=0):
             fallen.append(i)
     for i in fallen:
-        army.pop(i)       
-
-    for i in cards:
-        i.draw()    
+        army.pop(i)          
 
     for i in defence:
         i.draw()
@@ -86,9 +88,15 @@ while run:
                 dist = distanceCalc(i,defence[j])
                 if(dist<distance):
                     nearest = j
+                    distance = dist
             if(nearest is not None):        
                 if(abs(i.posx - defence[nearest].posx)<=i.range):
-                    pass
+                    if(abs(i.posy - defence[nearest].posy)<=i.range):
+                        defence[nearest].damage(i.strength)
+                        pygame.draw.line(table1.canvas,(68,85,90),(defence[nearest].posx-10,defence[nearest].posy-10),(i.posx,i.posy)) 
+                        if(defence[nearest].health<=0):
+                            defence.pop(nearest)
+                            break
                 elif(i.posx > defence[j].posx):
                     i.movex(i.posx-i.speed)
                 elif(i.posx < defence[j].posx):
@@ -146,7 +154,16 @@ while run:
                 if(state==11):
                     defence.append(Cannon(table1,pos[0],pos[1]))
                 elif(state==12):
-                    defence.append(Tower(table1,pos[0],pos[1]))            
+                    defence.append(Tower(table1,pos[0],pos[1]))  
+
+
+
+
+    displaySpace.blit(infantryImage,(cards[0].posx,cards[0].posy))
+    displaySpace.blit(archerImage,(cards[1].posx,cards[1].posy))     
+    displaySpace.blit(cavalryImage,(cards[2].posx,cards[2].posy))
+    displaySpace.blit(heavycavalryImage,(cards[3].posx,cards[3].posy))
+
 
     pygame.display.update()
 pygame.quit()   

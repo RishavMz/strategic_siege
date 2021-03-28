@@ -6,11 +6,11 @@ class Infantry:
         self.posx = posx
         self.posy = posy
         self.health = 20
-        self.strength = 15
+        self.strength = 0.8
         self.speed = 5
         self.table = table
         self.rad = 11
-        self.range = 2
+        self.range = 50
     def damage(self,force):
         self.health -= force
     def getHP(self):
@@ -32,11 +32,11 @@ class Archer:
         self.posx = posx
         self.posy = posy
         self.health = 15
-        self.strength = 20
+        self.strength = 2
         self.speed = 8
         self.table = table
         self.rad = 9
-        self.range = 30
+        self.range = 210
     def damage(self,force):
         self.health -= force
     def getHP(self):
@@ -55,11 +55,11 @@ class HeavyCavalry:
         self.posx = posx
         self.posy = posy
         self.health = 50
-        self.strength = 5
+        self.strength = 0.6
         self.speed = 3
         self.table = table
         self.rad = 15
-        self.range = 5
+        self.range = 80
     def damage(self,force):
         self.health -= force
     def getHP(self):
@@ -78,11 +78,11 @@ class Cavalry:
         self.posx = posx
         self.posy = posy
         self.health = 25
-        self.strength = 15
+        self.strength = 1
         self.speed = 10
         self.table = table
         self.rad = 12
-        self.range = 10
+        self.range = 120
     def damage(self,force):
         self.health -= force
     def getHP(self):
