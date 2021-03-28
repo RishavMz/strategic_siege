@@ -1,6 +1,7 @@
 import pygame
 from data.troops import *
 from data.defenses import *
+import math
 
 pygame.init()
 WIDTH = 700
@@ -56,7 +57,8 @@ cards.append(Cards(table1,220,4,2))
 cards.append(Cards(table1,530,11,4))
 cards.append(Cards(table1,590,12,6))
 
-
+def distanceCalc(body1, body2):
+    return math.sqrt((body1.posx - body2.posx)**2 + (body1.posy - body2.posy)**2)
 
 
 
@@ -77,14 +79,40 @@ while run:
     for i in defence:
         i.draw()
 
+    for i in army:
+        if(len(defence)>0):
+            nearest , distance = None , 1000000
+            for j in range(len(defence)):
+                dist = distanceCalc(i,defence[j])
+                if(dist<distance):
+                    nearest = j
+            if(nearest is not None):        
+                if(abs(i.posx - defence[nearest].posx)<=i.range):
+                    pass
+                elif(i.posx > defence[j].posx):
+                    i.movex(i.posx-i.speed)
+                elif(i.posx < defence[j].posx):
+                    i.movex(i.posx+i.speed)   
+                if(abs(i.posy - defence[nearest].posy)<=i.range):
+                    pass
+                elif(i.posy > defence[j].posy):
+                    i.movey(i.posy-i.speed)
+                elif(i.posy < defence[j].posy):
+                    i.movey(i.posy+i.speed)      
+
+                      
+    
+
     if(len(army)>0):
         for i in range(len(defence)):    
             damagedata = defence[i].attack(army)
-            if(damagedata):
+            if(damagedata is not None):
                 pygame.draw.line(table1.canvas,(195,115,119),(defence[i].posx-10,defence[i].posy-10),(army[damagedata].posx,army[damagedata].posy)) 
                 army[damagedata].damage(defence[i].power)
+                   
 
     pygame.time.delay(30)
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False 
