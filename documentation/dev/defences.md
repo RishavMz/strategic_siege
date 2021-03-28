@@ -18,7 +18,7 @@ power           = 0.6
 hitpoints       = 150
 attack range    = 200 
 
-# Methods:
+## Methods:
 
 <p>
 damage(force)       -   Takes strength of attack as input and reduces its hitpoints by the input attack strength
@@ -48,7 +48,7 @@ power           = 0.2
 hitpoints       = 100
 attack range    = 400 
 
-# Methods:
+## Methods:
 
 <p>
 damage(force)       -   Takes strength of attack as input and reduces its hitpoints by the input attack strength
