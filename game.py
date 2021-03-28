@@ -1,5 +1,6 @@
 import pygame
-import math
+from data.troops import *
+from data.defenses import *
 
 pygame.init()
 WIDTH = 700
@@ -37,104 +38,6 @@ class Cards:
    
 
 
-class Infantry:
-    def __init__(self,table,posx,posy):
-        self.posx = posx
-        self.posy = posy
-        self.health = 20
-        self.strength = 10
-        self.speed = 10
-        self.table = table
-        self.rad = 11
-    def damage(self,force):
-        self.health -= force
-    def getHP(self):
-        return self.health
-    def draw(self):
-        pygame.draw.circle(self.table.canvas, (255,0,0), (self.posx, self.posy), self.rad)    
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-10,self.posy-15, (self.health), 2))     
-
-
-
-
-
-class Archer:
-    def __init__(self,table,posx,posy):
-        self.posx = posx
-        self.posy = posy
-        self.health = 15
-        self.strength = 20
-        self.speed = 12
-        self.table = table
-        self.rad = 9
-    def damage(self,force):
-        self.health -= force
-    def getHP(self):
-        return self.health
-    def draw(self):
-        pygame.draw.circle(self.table.canvas, (0,255,0), (self.posx, self.posy), self.rad)    
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-10,self.posy-15, (self.health), 2)) 
-
-
-
-class HeavyCavalry:
-    def __init__(self,table,posx,posy):
-        self.posx = posx
-        self.posy = posy
-        self.health = 50
-        self.strength = 5
-        self.speed = 8
-        self.table = table
-        self.rad = 15
-    def damage(self,force):
-        self.health -= force
-    def getHP(self):
-        return self.health
-    def draw(self):
-        pygame.draw.circle(self.table.canvas, (0,255,255), (self.posx, self.posy), self.rad)  
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-10,self.posy-20, (self.health), 2)) 
-
-
-
-class Cavalry:
-    def __init__(self,table,posx,posy):
-        self.posx = posx
-        self.posy = posy
-        self.health = 18
-        self.strength = 16
-        self.speed = 15
-        self.table = table
-        self.rad = 12
-    def damage(self,force):
-        self.health -= force
-    def getHP(self):
-        return self.health
-    def draw(self):
-        pygame.draw.circle(self.table.canvas, (255,255,0), (self.posx, self.posy), self.rad)
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-10,self.posy-18, (self.health), 2))    
-
-
-
-class Cannon:
-    def __init__(self,table,power,health,posx,posy):
-        self.table = table
-        self.power = power
-        self.posx = posx
-        self.posy = posy
-    def getHP(self):
-        return self.health
-    def draw(self):
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-20,self.posy-20, 20 ,20))     
-    def attack(self,troops):
-        nearest, nearval = 0,1000
-        for i in range(len(troops)):
-            dist = math.sqrt((self.posx-troops[i].posx)**2 + (self.posy-troops[i].posy)**2 )
-            if(dist < nearval):
-                nearval = dist
-                nearset = i
-        return nearest   
-
-
 
 table1 = Table(WIDTH, HEIGHT)
 Table_name="Battle_Machine"
@@ -148,10 +51,9 @@ cards.append(Cards(table1, 40,1))
 cards.append(Cards(table1,100,2))
 cards.append(Cards(table1,160,3))
 cards.append(Cards(table1,220,4))
+cards.append(Cards(table1,550,11))
 
-cannons.append(Cannon(table1,0.2,50,650,150))
-cannons.append(Cannon(table1,0.2,50,650,350))
-cannons.append(Cannon(table1,0.2,50,650,550))
+
 
 
 while run:
@@ -188,6 +90,7 @@ while run:
             if(pos[1]<=60):
                 for i in cards:
                     i.checkmouse(pos[0])
+
             elif(pos[1]>=100 and pos[0]<500):
                 if(state==1):        
                     army.append(Infantry(table1,pos[0],pos[1]))
@@ -197,6 +100,10 @@ while run:
                     army.append(Cavalry(table1,pos[0],pos[1]))
                 elif(state==4):
                     army.append(HeavyCavalry(table1,pos[0],pos[1]))
+
+            elif(pos[1]>=100 and pos[0]>510):
+                if(state==11):
+                    cannons.append(Cannon(table1,0.5,pos[0],pos[1]))        
 
     pygame.display.update()
 pygame.quit()   
