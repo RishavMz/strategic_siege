@@ -22,13 +22,14 @@ class Table:
 
 
 class Cards:
-    def __init__(self,table,posx,state):
+    def __init__(self,table,posx,state,number):
         self.table = table
         self.posx = posx
         self.posy = 10
         self.height = 60
         self.width = 50
-        self.state = state     
+        self.state = state  
+        self.number = number   
     def checkmouse(self,posx):
         global state
         if(posx >= self.posx) and (posx <= (self.posx+self.width)):
@@ -45,13 +46,16 @@ Table_name="Battle_Machine"
 run = True
 army = []
 cards = []
-cannons = []
+defence = []
 
-cards.append(Cards(table1, 40,1))
-cards.append(Cards(table1,100,2))
-cards.append(Cards(table1,160,3))
-cards.append(Cards(table1,220,4))
-cards.append(Cards(table1,550,11))
+cards.append(Cards(table1, 40,1,10))
+cards.append(Cards(table1,100,2,10))
+cards.append(Cards(table1,160,3,5))
+cards.append(Cards(table1,220,4,2))
+
+cards.append(Cards(table1,530,11,4))
+cards.append(Cards(table1,590,12,6))
+
 
 
 
@@ -70,14 +74,15 @@ while run:
     for i in cards:
         i.draw()    
 
-    for i in cannons:
+    for i in defence:
         i.draw()
 
     if(len(army)>0):
-        for i in range(len(cannons)):    
-            damagedata = cannons[i].attack(army)
-            pygame.draw.line(table1.canvas,(12,34,56),(cannons[i].posx-10,cannons[i].posy-10),(army[damagedata].posx,army[damagedata].posy)) 
-            army[damagedata].damage(cannons[i].power)
+        for i in range(len(defence)):    
+            damagedata = defence[i].attack(army)
+            if(damagedata):
+                pygame.draw.line(table1.canvas,(195,115,119),(defence[i].posx-10,defence[i].posy-10),(army[damagedata].posx,army[damagedata].posy)) 
+                army[damagedata].damage(defence[i].power)
 
     pygame.time.delay(30)
     for event in pygame.event.get():
@@ -92,18 +97,28 @@ while run:
                     i.checkmouse(pos[0])
 
             elif(pos[1]>=100 and pos[0]<500):
-                if(state==1):        
-                    army.append(Infantry(table1,pos[0],pos[1]))
+                if(state==1):     
+                    if(cards[0].number>0):   
+                        army.append(Infantry(table1,pos[0],pos[1]))
+                        cards[0].number -= 1
                 elif(state==2):
-                    army.append(Archer(table1,pos[0],pos[1]))
+                    if(cards[1].number>0):
+                        army.append(Archer(table1,pos[0],pos[1]))
+                        cards[1].number -= 1
                 elif(state==3):
-                    army.append(Cavalry(table1,pos[0],pos[1]))
+                    if(cards[2].number>0):
+                        army.append(Cavalry(table1,pos[0],pos[1]))
+                        cards[2].number -= 1
                 elif(state==4):
-                    army.append(HeavyCavalry(table1,pos[0],pos[1]))
+                    if(cards[3].number>0):
+                        army.append(HeavyCavalry(table1,pos[0],pos[1]))
+                        cards[3].number -= 1
 
             elif(pos[1]>=100 and pos[0]>510):
                 if(state==11):
-                    cannons.append(Cannon(table1,0.5,pos[0],pos[1]))        
+                    defence.append(Cannon(table1,pos[0],pos[1]))
+                elif(state==12):
+                    defence.append(Tower(table1,pos[0],pos[1]))            
 
     pygame.display.update()
 pygame.quit()   

@@ -6,7 +6,7 @@ class Infantry:
         self.posx = posx
         self.posy = posy
         self.health = 20
-        self.strength = 10
+        self.strength = 15
         self.speed = 10
         self.table = table
         self.rad = 11
@@ -16,7 +16,7 @@ class Infantry:
         return self.health
     def draw(self):
         pygame.draw.circle(self.table.canvas, (255,0,0), (self.posx, self.posy), self.rad)    
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-10,self.posy-15, (self.health), 2))     
+        pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-15, (self.health), 2))     
 
 
 
@@ -37,7 +37,7 @@ class Archer:
         return self.health
     def draw(self):
         pygame.draw.circle(self.table.canvas, (0,255,0), (self.posx, self.posy), self.rad)    
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-10,self.posy-15, (self.health), 2)) 
+        pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-15, (self.health), 2)) 
 
 
 
@@ -56,7 +56,7 @@ class HeavyCavalry:
         return self.health
     def draw(self):
         pygame.draw.circle(self.table.canvas, (0,255,255), (self.posx, self.posy), self.rad)  
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-10,self.posy-20, (self.health), 2)) 
+        pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-20, (self.health), 2)) 
 
 
 
@@ -64,8 +64,8 @@ class Cavalry:
     def __init__(self,table,posx,posy):
         self.posx = posx
         self.posy = posy
-        self.health = 18
-        self.strength = 16
+        self.health = 25
+        self.strength = 15
         self.speed = 15
         self.table = table
         self.rad = 12
@@ -75,5 +75,5 @@ class Cavalry:
         return self.health
     def draw(self):
         pygame.draw.circle(self.table.canvas, (255,255,0), (self.posx, self.posy), self.rad)
-        pygame.draw.rect(self.table.canvas, (255,255,255), (self.posx-10,self.posy-18, (self.health), 2))    
+        pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-18, (self.health), 2))    
 
