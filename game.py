@@ -63,10 +63,16 @@ defence = []
 
 assemble()
 
-infantryImage = pygame.image.load('images/infantry.png')
-archerImage = pygame.image.load('images/archer.png')
-cavalryImage = pygame.image.load('images/cavalry.png')
-heavycavalryImage = pygame.image.load('images/heavycavalry.png')
+cardinfantryImage = pygame.image.load(    'images/cardinfantry.png')
+cardarcherImage = pygame.image.load(      'images/cardarcher.png')
+cardcavalryImage = pygame.image.load(     'images/cardcavalry.png')
+cardheavycavalryImage = pygame.image.load('images/cardheavycavalry.png')
+cannonImage = pygame.image.load(          'images/cannon.png')
+towerImage = pygame.image.load(           'images/tower.png')
+infantryImage = pygame.image.load(        'images/infantry.png')
+archerImage = pygame.image.load(          'images/archer.png')
+cavalryImage = pygame.image.load(         'images/cavalry.png')
+heavycavalryImage = pygame.image.load(    'images/heavycavalry.png')
 displaySpace = pygame.display.set_mode((600,700))
 
 def distanceCalc(body1, body2):
@@ -179,10 +185,24 @@ while run:
                     state += 1               
 
 
-    displaySpace.blit(infantryImage,(cards[0].posx,cards[0].posy))
-    displaySpace.blit(archerImage,(cards[1].posx,cards[1].posy))     
-    displaySpace.blit(cavalryImage,(cards[2].posx,cards[2].posy))
-    displaySpace.blit(heavycavalryImage,(cards[3].posx,cards[3].posy))
+    displaySpace.blit(cardinfantryImage,(cards[0].posx,cards[0].posy))
+    displaySpace.blit(cardarcherImage,(cards[1].posx,cards[1].posy))     
+    displaySpace.blit(cardcavalryImage,(cards[2].posx,cards[2].posy))
+    displaySpace.blit(cardheavycavalryImage,(cards[3].posx,cards[3].posy))
+    for i in defence:
+        if(i.type=="cannon"):
+            displaySpace.blit(cannonImage,(i.posx-22,i.posy-22))
+        elif(i.type=="tower"):
+            displaySpace.blit(towerImage,(i.posx-15,i.posy-15))    
+    for i in army:
+        if(i.type=="infantry"):
+            displaySpace.blit(infantryImage,(i.posx-10,i.posy-10))
+        elif(i.type=="archer"):
+            displaySpace.blit(archerImage,(i.posx-8,i.posy-8))
+        elif(i.type=="cavalry"):
+            displaySpace.blit(cavalryImage,(i.posx-6,i.posy-6))
+        elif(i.type=="heavycavalry"):
+            displaySpace.blit(heavycavalryImage,(i.posx-15,i.posy-15))
 
 
     pygame.display.update()

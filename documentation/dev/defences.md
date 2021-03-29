@@ -15,7 +15,7 @@ newcannon = Cannon(canvas, x_position, y_position)
 
 ## Data members (constants):
 
-<p>power               = 0.3
+<p>power               = 0.15
 </p><p>hitpoints       = 30
 </p><p>attack range    = 200 
 
@@ -48,7 +48,7 @@ newtower = Tower(canvas, x_position, y_position)
 
 ## Data members (constants):
 
-<p>power                = 0.1
+<p>power                = 0.05
 </p><p>hitpoints       = 20
 </p><p>attack range    = 400 
 </p>

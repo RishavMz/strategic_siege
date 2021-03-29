@@ -6,17 +6,17 @@ class Infantry:
         self.posx = posx
         self.posy = posy
         self.health = 20
-        self.strength = 0.4
+        self.strength = 0.25
         self.speed = 2.5
         self.table = table
-        self.rad = 11
-        self.range = 50
+        self.rad = 10
+        self.range = 30
+        self.type="infantry"
     def damage(self,force):
         self.health -= force
     def getHP(self):
         return self.health
     def draw(self):
-        pygame.draw.circle(self.table.canvas, (255,0,0), (self.posx, self.posy), self.rad)    
         pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-15, (self.health), 2))    
     def movex(self,pos):
         self.posx = pos
@@ -32,17 +32,17 @@ class Archer:
         self.posx = posx
         self.posy = posy
         self.health = 15
-        self.strength = 0.18
+        self.strength = 0.09
         self.speed = 4
         self.table = table
-        self.rad = 9
+        self.rad = 8
         self.range = 210
+        self.type="archer"
     def damage(self,force):
         self.health -= force
     def getHP(self):
         return self.health
     def draw(self):
-        pygame.draw.circle(self.table.canvas, (0,255,0), (self.posx, self.posy), self.rad)    
         pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-15, (self.health), 2)) 
     def movex(self,pos):
         self.posx = pos
@@ -55,17 +55,17 @@ class HeavyCavalry:
         self.posx = posx
         self.posy = posy
         self.health = 100
-        self.strength = 0.05
+        self.strength = 0.025
         self.speed = 1.5
         self.table = table
         self.rad = 15
-        self.range = 80
+        self.range = 50
+        self.type="heavycavalry"
     def damage(self,force):
         self.health -= force
     def getHP(self):
         return self.health
     def draw(self):
-        pygame.draw.circle(self.table.canvas, (0,255,255), (self.posx, self.posy), self.rad)  
         pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-20, (self.health), 2)) 
     def movex(self,pos):
         self.posx = pos
@@ -78,17 +78,17 @@ class Cavalry:
         self.posx = posx
         self.posy = posy
         self.health = 15
-        self.strength = 0.3
+        self.strength = 0.15
         self.speed = 5
         self.table = table
         self.rad = 12
-        self.range = 120
+        self.range = 90
+        self.type="cavalry"
     def damage(self,force):
         self.health -= force
     def getHP(self):
         return self.health
     def draw(self):
-        pygame.draw.circle(self.table.canvas, (255,255,0), (self.posx, self.posy), self.rad)
         pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-18, (self.health), 2))    
     def movex(self,pos):
         self.posx = pos

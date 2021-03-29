@@ -6,12 +6,13 @@ import math
 class Cannon:
     def __init__(self,table,posx,posy):
         self.table = table
-        self.power = 0.3
+        self.power = 0.15
         self.health = 30
         self.posx = posx
         self.posy = posy
         self.rad=15
         self.rangeatt = 200
+        self.type="cannon"
     def damage(self,force):
         self.health -= force
     def draw(self):
@@ -30,12 +31,13 @@ class Cannon:
 class Tower:
     def __init__(self,table,posx,posy):
         self.table = table
-        self.power = 0.1
+        self.power = 0.05
         self.health = 20
         self.posx = posx
         self.posy = posy
         self.rad=10
         self.rangeatt = 400
+        self.type="tower"
     def damage(self,force):
         self.health -= force
     def draw(self):
