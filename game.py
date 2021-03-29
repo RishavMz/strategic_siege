@@ -78,6 +78,10 @@ play = 0
 while run:
     table1.draw(Table_name)
 
+    for i in range(len(cards)):
+        if(state == (i+1)):
+            for j in range(cards[i].number):
+                pygame.draw.rect(table1.canvas, (255,255,255), (cards[i].posx + (j*4),75,2, 5))                    
 
     if(len(army)>0):
         play = 1
@@ -146,11 +150,9 @@ while run:
 
         if event.type == pygame.MOUSEBUTTONUP:
             pos = pygame.mouse.get_pos()
-
             if(pos[1]<=60):
                 for i in cards:
                     i.checkmouse(pos[0])
-
             elif(pos[1]>=100 and pos[0]<500):
                 if(state==1):     
                     if(cards[0].number>0):   
@@ -168,6 +170,13 @@ while run:
                     if(cards[3].number>0):
                         army.append(HeavyCavalry(table1,pos[0],pos[1]))
                         cards[3].number -= 1
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                if(state>1):
+                    state -= 1
+            if event.key == pygame.K_RIGHT:
+                if(state<=3):
+                    state += 1               
 
 
     displaySpace.blit(infantryImage,(cards[0].posx,cards[0].posy))

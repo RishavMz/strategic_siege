@@ -1,6 +1,6 @@
 class Level:
     def __init__(self,cards,defence):
-        self.cards = [[40,1],[100,2],[160,3],[220,4]]
+        self.cards = [[50,1],[150,2],[250,3],[350,4]]
         self.defence = defence
         for i in range(len(cards)):
             self.cards[i].append(cards[i])
