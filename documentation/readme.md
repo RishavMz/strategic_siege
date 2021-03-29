@@ -7,6 +7,9 @@ In each level, there are some enemy defence structures to the right side of bord
 The screen is divided into 3 sections. The top section contains the cards, showing the troops you have under your command. Click on a card to select it. Note: Limited number of troops for each card. No unlimited manpower.  
 The left section contains the deployment area. Here you can deploy your troops by clicking with your mouse. Upon deployment, troops would charge immediately towards enemy.  The right section contains enemy territory. You cannot deploy troops in this area. This region contains enemy defence structures. Your objective is to destroy all these enemy structures to capture this land and proceed to the next battle.
 
+#
+Navigate through cards using mouse click, or using ledt and right keys.
+
 ### Troops:
 
 <p>Infantry        - Foot soldiers. Hard hitters

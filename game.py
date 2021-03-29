@@ -142,7 +142,7 @@ while run:
                 army[damagedata].damage(defence[i].power)
                    
 
-    pygame.time.delay(30)
+    pygame.time.delay(10)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

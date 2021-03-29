@@ -6,8 +6,8 @@ import math
 class Cannon:
     def __init__(self,table,posx,posy):
         self.table = table
-        self.power = 0.6
-        self.health = 150
+        self.power = 0.3
+        self.health = 30
         self.posx = posx
         self.posy = posy
         self.rad=15
@@ -30,8 +30,8 @@ class Cannon:
 class Tower:
     def __init__(self,table,posx,posy):
         self.table = table
-        self.power = 0.2
-        self.health = 100
+        self.power = 0.1
+        self.health = 20
         self.posx = posx
         self.posy = posy
         self.rad=10

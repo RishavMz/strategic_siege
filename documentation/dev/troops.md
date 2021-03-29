@@ -15,8 +15,8 @@ newinfantry = Infantry(canvas, x_position, y_position)
 ### Data members (constants) :
 
 <p>health          -   20
-</p><p>attack force    -   2
-</p><p>speed           -   5
+</p><p>attack force    -   0.4
+</p><p>speed           -   2.5
 </p><p>attack range    -   50  
 </p>
 
@@ -35,8 +35,8 @@ newarcher = Archer(canvas, x_position, y_position)
 ### Data members (constants) :
 
 <p>health          -   15
-</p><p>attack force    -   0.9
-</p><p>speed           -   8
+</p><p>attack force    -   0.18
+</p><p>speed           -   4
 </p><p>attack range    -   210 
 </p>
 
@@ -54,8 +54,8 @@ newcavalry = Cavalry(canvas, x_position, y_position)
 ### Data members (constants) :
 
 <p>health          -   25
-</p><p>attack force    -   1
-</p><p>speed           -   10
+</p><p>attack force    -   0.3
+</p><p>speed           -   5
 </p><p>attack range    -   120 
 </p>
 
@@ -73,9 +73,9 @@ newheavycavalry = HeavyCavalry(canvas, x_position, y_position)
 ### Data members (constants) :
 
 <p>
-</p><p>health          -   50
-</p><p>attack force    -   0.6
-</p><p>speed           -   3
+</p><p>health          -   100
+</p><p>attack force    -   0.05
+</p><p>speed           -   1.5
 </p><p>attack range    -   80 
 </p>
 

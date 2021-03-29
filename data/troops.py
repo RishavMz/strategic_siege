@@ -6,8 +6,8 @@ class Infantry:
         self.posx = posx
         self.posy = posy
         self.health = 20
-        self.strength = 2
-        self.speed = 5
+        self.strength = 0.4
+        self.speed = 2.5
         self.table = table
         self.rad = 11
         self.range = 50
@@ -32,8 +32,8 @@ class Archer:
         self.posx = posx
         self.posy = posy
         self.health = 15
-        self.strength = 0.9
-        self.speed = 8
+        self.strength = 0.18
+        self.speed = 4
         self.table = table
         self.rad = 9
         self.range = 210
@@ -54,9 +54,9 @@ class HeavyCavalry:
     def __init__(self,table,posx,posy):
         self.posx = posx
         self.posy = posy
-        self.health = 50
-        self.strength = 0.6
-        self.speed = 3
+        self.health = 100
+        self.strength = 0.05
+        self.speed = 1.5
         self.table = table
         self.rad = 15
         self.range = 80
@@ -77,9 +77,9 @@ class Cavalry:
     def __init__(self,table,posx,posy):
         self.posx = posx
         self.posy = posy
-        self.health = 25
-        self.strength = 1
-        self.speed = 10
+        self.health = 15
+        self.strength = 0.3
+        self.speed = 5
         self.table = table
         self.rad = 12
         self.range = 120
