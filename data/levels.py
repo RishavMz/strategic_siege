@@ -7,7 +7,11 @@ class Level:
     def showcards(self):
         return self.cards
     def showdefenses(self):
-        return self.defence            
+        return self.defence 
+
+cards0=[10,10,10,10]
+defence0 = [[1,550,200],[2,600,400]]  
+level0 = Level(cards0,defence0)                 
 
 cards1 = [8,8,5,3]
 defence1 = [[1,550,150],[1,620,300],[1,620,450],[1,550,550]]     
@@ -26,6 +30,10 @@ cards4 = [6,6,5,1]
 defence4 = [[1,550,150],[2,580,300],[2,620,350],[1,520,370],[2,620,400],[2,580,450],[2,620,200],[2,580,500],[1,550,550]]     
 level4 = Level(cards4,defence4)  
 
-levels = [level1,level2,level3,level4]
+card5 = [6,6,5,1]
+defence5 = [[2,620,150],[2,620,250],[2,620,350],[2,620,450],[2,620,550],[1,550,130],[1,550,180],[1,550,230],[1,550,280],[1,550,330],[1,550,380],[1,550,430],[1,550,480],[1,550,530],[1,550,580]]
+level5 = Level(card5,defence5)
+
+levels = [level0,level1,level2,level3,level4,level5]
 
 # Author : RishavMz
