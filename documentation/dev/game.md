@@ -53,3 +53,9 @@ For each unit in army, its nearest defence structure is calculated using <b>dist
 <p>
 If <b>army</b> list is not zero, for each item in <b>defence</b> list, its nearest unit is calculated using <b>attack(army)</b> function. If a troop lies in range, a line is drawn towards the unit to show an attack and the troop unit health is reduced by <b>damage(force)</b> function.
 </p>
+
+#
+#
+#
+
+## <div align="right">Made with ❤ by RishavMz</div>

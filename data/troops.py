@@ -94,3 +94,5 @@ class Cavalry:
         self.posx = pos
     def movey(self,pos):
         self.posy = pos
+
+# Author : RishavMz

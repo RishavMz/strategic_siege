@@ -20,3 +20,8 @@ The left section contains the deployment area. Here you can deploy your troops b
 <p>Cannon          - Giant grey barrels shooting fireballs. Deal high damage when hit </p>
 <p>Towers          - These towers oversee greater distances, and contain enemy archers</p>
 
+#
+#
+#
+
+## <div align="right">Made with ❤ by RishavMz</div>

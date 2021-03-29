@@ -98,3 +98,9 @@ movex(pos)  -   Changes the x coordinate of unit to given position
 <p>
 movey(pos)  -   Changes the y coordinate of unit to given position
 </p>
+
+#
+#
+#
+
+## <div align="right">Made with ❤ by RishavMz</div>

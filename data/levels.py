@@ -9,12 +9,6 @@ class Level:
     def showdefenses(self):
         return self.defence            
 
-
-class Game:
-    def __init__(self):
-        self.level = 0
-
-
 cards1 = [8,8,5,5]
 defence1 = [[1,550,150],[1,620,300],[1,620,450],[1,550,550]]     
 level1 = Level(cards1,defence1)      
@@ -33,3 +27,5 @@ defence4 = [[1,550,150],[2,580,300],[2,620,350],[1,520,370],[2,620,400],[2,580,4
 level4 = Level(cards4,defence4)  
 
 levels = [level1,level2,level3,level4]
+
+# Author : RishavMz

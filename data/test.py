@@ -11,3 +11,5 @@ for i in army:
         for j in range(len(defence)):
             dist = distanceCalc(i,defence[j])
             print(i,defence[j],dist)
+
+# Author : RishavMz            

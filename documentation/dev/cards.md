@@ -30,3 +30,9 @@ Draws a reactange shape for the card on screen
 
 #
 Note:   Images are being rendered seperately for card foreground ( just for UI )
+
+#
+#
+#
+
+## <div align="right">Made with ❤ by RishavMz</div>
