@@ -8,15 +8,17 @@
 
 newcannon = Cannon(canvas, x_position, y_position)
 
-canvas      - The pygame canvas upon which all rendering is to be done
-x_position  - The x coordinate of the cannon
-y_position  - The y coordinate of the cannon 
+<p>canvas      - The pygame canvas upon which all rendering is to be done
+</p><p>x_position  - The x coordinate of the cannon
+</p><p>y_position  - The y coordinate of the cannon 
+</p>
 
 ## Data members (constants):
 
-power           = 0.6
-hitpoints       = 150
-attack range    = 200 
+<p>power           = 0.6
+</p><p>hitpoints       = 150
+</p><p>attack range    = 200 
+</p>
 
 ## Methods:
 
@@ -38,15 +40,17 @@ attack(troops)      -   Takes input as a list of army units (of any type Troop).
 
 newtower = Tower(canvas, x_position, y_position)
 
-canvas      - The pygame canvas upon which all rendering is to be done
-x_position  - The x coordinate of the tower
-y_position  - The y coordinate of the tower 
+<p>canvas      - The pygame canvas upon which all rendering is to be done
+</p><p>x_position  - The x coordinate of the tower
+</p><p>y_position  - The y coordinate of the tower 
+</p>
 
 ## Data members (constants):
 
-power           = 0.2
-hitpoints       = 100
-attack range    = 400 
+<p>power           = 0.2
+</p><p>hitpoints       = 100
+</p><p>attack range    = 400 
+</p>
 
 ## Methods:
 

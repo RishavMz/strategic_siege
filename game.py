@@ -69,9 +69,6 @@ cavalryImage = pygame.image.load('images/cavalry.png')
 heavycavalryImage = pygame.image.load('images/heavycavalry.png')
 displaySpace = pygame.display.set_mode((600,700))
 
-cards.append(Cards(table1,530,11,4))
-cards.append(Cards(table1,590,12,6))
-
 def distanceCalc(body1, body2):
     return math.sqrt((body1.posx - body2.posx)**2 + (body1.posy - body2.posy)**2)
 
@@ -80,6 +77,8 @@ play = 0
 
 while run:
     table1.draw(Table_name)
+
+
     if(len(army)>0):
         play = 1
     if(play==1 and len(defence)==0):
@@ -87,6 +86,8 @@ while run:
         cards = []
         level += 1
         assemble()
+
+
     fallen = []
     for i in range(len(army)):
         army[i].draw()
@@ -94,6 +95,7 @@ while run:
             fallen.append(i)
     for i in fallen:
         army.pop(i)          
+
 
     for i in defence:
         i.draw()

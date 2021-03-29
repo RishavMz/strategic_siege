@@ -9,13 +9,14 @@ The left section contains the deployment area. Here you can deploy your troops b
 
 ### Troops:
 
-Infantry        - Foot soldiers. Hard hitters
-Archers         - Attack from greater distance. May hit some defence structures without getting noticed by them
-Cavalry         - Fastest moving troops, as they ride on horses. Charge them to penetrate forward line of defence
-Heavy Cavalry   - War elephants are here. Strongest of all, but at the price of attack force and speed
+<p>Infantry        - Foot soldiers. Hard hitters
+</p><p>Archers         - Attack from greater distance. May hit some defence structures without getting noticed by them
+</p><p>Cavalry         - Fastest moving troops, as they ride on horses. Charge them to penetrate forward line of defence
+</p><p>Heavy Cavalry   - War elephants are here. Strongest of all, but at the price of attack force and speed
+</p>
 
 ### Defence Structures:
 
-Cannon          - Giant grey barrels shooting fireballs. Deal high damage when hit
-Towers          - These towers oversee greater distances, and contain enemy archers
+<p>Cannon          - Giant grey barrels shooting fireballs. Deal high damage when hit </p>
+<p>Towers          - These towers oversee greater distances, and contain enemy archers</p>
 

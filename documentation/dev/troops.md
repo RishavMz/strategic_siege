@@ -1,6 +1,5 @@
 # Troops
 
-# Available troops:
 
 ## 1. Infantry
 
@@ -8,68 +7,80 @@
 
 newinfantry = Infantry(canvas, x_position, y_position)
 
-canvas      - The pygame canvas upon which all rendering is to be done
-x_position  - The x coordinate were the troop is to be deployed
-y_position  - The y coordinate where the troop is to be deployed
+<p>canvas      - The pygame canvas upon which all rendering is to be done
+</p><p>x_position  - The x coordinate were the troop is to be deployed
+</p><p>y_position  - The y coordinate where the troop is to be deployed
+</p>
 
 ### Data members (constants) :
 
-health          -   20
-attack force    -   2
-speed           -   5
-attack range    -   50  
+<p>health          -   20
+</p><p>attack force    -   2
+</p><p>speed           -   5
+</p><p>attack range    -   50  
+</p>
 
-## 1. Archer
+
+## 2. Archer
 
 ### Add new unit
 
 newarcher = Archer(canvas, x_position, y_position)
 
-canvas      - The pygame canvas upon which all rendering is to be done
-x_position  - The x coordinate were the troop is to be deployed
-y_position  - The y coordinate where the troop is to be deployed
+<p>canvas      - The pygame canvas upon which all rendering is to be done
+</p><p>x_position  - The x coordinate were the troop is to be deployed
+</p><p>y_position  - The y coordinate where the troop is to be deployed
+</p>
 
 ### Data members (constants) :
 
-health          -   15
-attack force    -   0.9
-speed           -   8
-attack range    -   210 
+<p>health          -   15
+</p><p>attack force    -   0.9
+</p><p>speed           -   8
+</p><p>attack range    -   210 
+</p>
 
-## 1. Cavalry
+## 3. Cavalry
 
 ### Add new unit
 
 newcavalry = Cavalry(canvas, x_position, y_position)
 
-canvas      - The pygame canvas upon which all rendering is to be done
-x_position  - The x coordinate were the troop is to be deployed
-y_position  - The y coordinate where the troop is to be deployed
+<p>canvas      - The pygame canvas upon which all rendering is to be done
+</p><p>x_position  - The x coordinate were the troop is to be deployed
+</p><p>y_position  - The y coordinate where the troop is to be deployed
+</p>
 
 ### Data members (constants) :
 
-health          -   25
-attack force    -   1
-speed           -   10
-attack range    -   120 
+<p>health          -   25
+</p><p>attack force    -   1
+</p><p>speed           -   10
+</p><p>attack range    -   120 
+</p>
 
-## 1. HeavyCavalry
+## 4. HeavyCavalry
 
 ### Add new unit
 
 newheavycavalry = HeavyCavalry(canvas, x_position, y_position)
 
-canvas      - The pygame canvas upon which all rendering is to be done
-x_position  - The x coordinate were the troop is to be deployed
-y_position  - The y coordinate where the troop is to be deployed
+<p>canvas      - The pygame canvas upon which all rendering is to be done
+</p><p>x_position  - The x coordinate were the troop is to be deployed
+</p><p>y_position  - The y coordinate where the troop is to be deployed
+</p>
 
 ### Data members (constants) :
 
-health          -   50
-attack force    -   0.6
-speed           -   3
-attack range    -   80 
+<p>
+</p><p>health          -   50
+</p><p>attack force    -   0.6
+</p><p>speed           -   3
+</p><p>attack range    -   80 
+</p>
+
 #
+
 ## Common Functions:
 
 <p>
