@@ -10,6 +10,8 @@ HEIGHT = 600
 state = 0
 level = 0
 
+totalDamageDone = 0
+totalDamageTaken = 0
 
 class Table:
     def __init__(self,width,height):
@@ -95,8 +97,16 @@ while run:
         army=[]
         cards = []
         level += 1
+        if(level == len(levels)):
+            run = False
+            print("\nYou won\n")
+            print("Total damage done : ",totalDamageDone)
+            print("Total damage taken: ",totalDamageTaken)  
+            print("\n")
+            break
         assemble()
 
+     
 
     fallen = []
     for i in range(len(army)):
@@ -122,6 +132,7 @@ while run:
                 if(abs(i.posx - defence[nearest].posx)<=i.range):
                     if(abs(i.posy - defence[nearest].posy)<=i.range):
                         defence[nearest].damage(i.strength)
+                        totalDamageDone += i.strength
                         pygame.draw.line(table1.canvas,(68,85,90),(defence[nearest].posx-10,defence[nearest].posy-10),(i.posx,i.posy)) 
                         if(defence[nearest].health<=0):
                             defence.pop(nearest)
@@ -146,7 +157,17 @@ while run:
             if(damagedata is not None):
                 pygame.draw.line(table1.canvas,(195,115,119),(defence[i].posx-10,defence[i].posy-10),(army[damagedata].posx,army[damagedata].posy)) 
                 army[damagedata].damage(defence[i].power)
-                   
+                totalDamageTaken += defence[i].power
+    cardsrem = 0
+    for i in cards:
+        cardsrem += i.number
+    if(len(army)==0 and len(defence)>0 and cardsrem == 0):
+        run = False
+        print("\n GAME OVER\n")
+        print("Total damage done : ",totalDamageDone)
+        print("Total damage taken: ",totalDamageTaken)  
+        print("\n")                  
+
 
     pygame.time.delay(10)
 
