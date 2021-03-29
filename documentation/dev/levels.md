@@ -10,9 +10,3 @@ newlevel = Level(cards,defences)
 
 #
 levels -    A list which stores list of all available levels
-
-#
-#
-#
-
-## <div align="right">Made with ❤ by RishavMz</div>

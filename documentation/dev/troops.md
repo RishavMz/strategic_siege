@@ -87,9 +87,6 @@ newheavycavalry = HeavyCavalry(canvas, x_position, y_position)
 damage(force)       -   Takes strength of attack as input and reduces its hitpoints by the input attack strength 
 </p>
 <p>
-getHP()     -   deprecated function
-</p>
-<p>
 draw()              -   Draws a circle representing the cannon and a red healthbar above it whose width is its health(hitpoints)
 </p>
 <p>
@@ -99,8 +96,3 @@ movex(pos)  -   Changes the x coordinate of unit to given position
 movey(pos)  -   Changes the y coordinate of unit to given position
 </p>
 
-#
-#
-#
-
-## <div align="right">Made with ❤ by RishavMz</div>

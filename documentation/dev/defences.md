@@ -67,8 +67,3 @@ draw()              -   Draws a circle representing the cannon and a red healthb
 attack(troops)      -   Takes input as a list of army units (of any type Troop). Finds the troop unit whose distance is least from it and returns the unit index from the input list. This function selects which unit is to be attacked by the tower
 </p>
 
-#
-#
-#
-
-## <div align="right">Made with ❤ by RishavMz</div>

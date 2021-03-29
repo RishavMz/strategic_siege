@@ -14,8 +14,6 @@ class Infantry:
         self.type="infantry"
     def damage(self,force):
         self.health -= force
-    def getHP(self):
-        return self.health
     def draw(self):
         pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-15, (self.health), 2))    
     def movex(self,pos):
@@ -40,8 +38,6 @@ class Archer:
         self.type="archer"
     def damage(self,force):
         self.health -= force
-    def getHP(self):
-        return self.health
     def draw(self):
         pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-15, (self.health), 2)) 
     def movex(self,pos):
@@ -63,8 +59,6 @@ class HeavyCavalry:
         self.type="heavycavalry"
     def damage(self,force):
         self.health -= force
-    def getHP(self):
-        return self.health
     def draw(self):
         pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-20, (self.health), 2)) 
     def movex(self,pos):
@@ -86,8 +80,6 @@ class Cavalry:
         self.type="cavalry"
     def damage(self,force):
         self.health -= force
-    def getHP(self):
-        return self.health
     def draw(self):
         pygame.draw.rect(self.table.canvas, (0,128,0), (self.posx-10,self.posy-18, (self.health), 2))    
     def movex(self,pos):
