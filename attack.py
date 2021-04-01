@@ -1,11 +1,11 @@
 import pygame
 from data.troops import *
 from data.defenses import *
-from data.levels import *
+from data.attack_levels import *
 
 import math
 
-WIDTH = 700
+WIDTH = 800
 HEIGHT = 600
 state = 0
 level = 0
@@ -23,7 +23,7 @@ class Table:
         pygame.display.set_caption(st)
         self.canvas.fill((0,0,0))
         pygame.draw.rect(self.canvas, (255,255,255), (30,90, self.width - 60, self.height-90),2)     
-        pygame.draw.rect(self.canvas, (255,255,255), (500,90, 200, self.height-90),1)   
+        pygame.draw.rect(self.canvas, (255,255,255), (500,90, 300, self.height-90),1)   
 
 
 class Cards:

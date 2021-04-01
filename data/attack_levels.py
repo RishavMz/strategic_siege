@@ -9,7 +9,7 @@ class Level:
     def showdefenses(self):
         return self.defence 
 
-cards0=[10,10,10,10]
+cards0=[1,1,1,1]
 defence0 = [[1,550,200],[2,600,400]]  
 level0 = Level(cards0,defence0)                 
 
