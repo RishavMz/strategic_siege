@@ -52,6 +52,8 @@ def assemble():
             defence.append(Cannon(table1,i[1],i[2]))
         elif(i[0]==2):
             defence.append(Tower(table1,i[1],i[2]))
+        elif(i[0]==3):
+            defence.append(Bunker(table1,i[1],i[2]))    
 
 
 
@@ -71,6 +73,7 @@ cardcavalryImage = pygame.image.load(     'images/cardcavalry.png')
 cardheavycavalryImage = pygame.image.load('images/cardheavycavalry.png')
 cannonImage = pygame.image.load(          'images/cannon.png')
 towerImage = pygame.image.load(           'images/tower.png')
+bunkerImage = pygame.image.load(           'images/bunker.png')
 infantryImage = pygame.image.load(        'images/infantry.png')
 archerImage = pygame.image.load(          'images/archer.png')
 cavalryImage = pygame.image.load(         'images/cavalry.png')
@@ -214,7 +217,9 @@ while run:
         if(i.type=="cannon"):
             displaySpace.blit(cannonImage,(i.posx-22,i.posy-22))
         elif(i.type=="tower"):
-            displaySpace.blit(towerImage,(i.posx-15,i.posy-15))    
+            displaySpace.blit(towerImage,(i.posx-15,i.posy-15)) 
+        elif(i.type=="bunker"):
+            displaySpace.blit(bunkerImage,(i.posx-22,i.posy-22))       
     for i in army:
         if(i.type=="infantry"):
             displaySpace.blit(infantryImage,(i.posx-10,i.posy-10))
@@ -229,4 +234,3 @@ while run:
     pygame.display.update()
 pygame.quit()   
 
-# Author : RishavMz

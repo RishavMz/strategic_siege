@@ -72,8 +72,10 @@ assemble()
 
 cardCannonImage = pygame.image.load(    'images/cardcannon.png')
 cardTowerImage = pygame.image.load(      'images/cardtower.png')
+cardBunkerImage = pygame.image.load(      'images/cardbunker.png')
 cannonImage = pygame.image.load(          'images/cannon.png')
 towerImage = pygame.image.load(           'images/tower.png')
+bunkerImage = pygame.image.load(           'images/bunker.png')
 infantryImage = pygame.image.load(        'images/infantry.png')
 archerImage = pygame.image.load(          'images/archer.png')
 cavalryImage = pygame.image.load(         'images/cavalry.png')
@@ -197,6 +199,10 @@ while run:
                     if(cards[1].number>0):
                         defence.append(Tower(table1,pos[0],pos[1]))
                         cards[1].number -= 1
+                elif(state==3):
+                    if(cards[2].number>0):
+                        defence.append(Bunker(table1,pos[0],pos[1]))
+                        cards[2].number -= 1        
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 if(state>1):
@@ -207,12 +213,16 @@ while run:
 
 
     displaySpace.blit(cardCannonImage,(cards[0].posx,cards[0].posy))
-    displaySpace.blit(cardTowerImage,(cards[1].posx,cards[1].posy))     
+    displaySpace.blit(cardTowerImage,(cards[1].posx,cards[1].posy)) 
+    displaySpace.blit(cardBunkerImage,(cards[2].posx,cards[2].posy))     
+    
     for i in defence:
         if(i.type=="cannon"):
             displaySpace.blit(cannonImage,(i.posx-22,i.posy-22))
         elif(i.type=="tower"):
             displaySpace.blit(towerImage,(i.posx-15,i.posy-15))    
+        elif(i.type=="bunker"):
+            displaySpace.blit(bunkerImage,(i.posx-22,i.posy-22))    
     for i in army:
         if(i.type=="infantry"):
             displaySpace.blit(infantryImage,(i.posx-10,i.posy-10))
@@ -227,4 +237,3 @@ while run:
     pygame.display.update()
 pygame.quit()   
 
-# Author : RishavMz

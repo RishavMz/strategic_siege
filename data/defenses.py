@@ -52,4 +52,29 @@ class Tower:
                 nearest = i
         return nearest        
 
-# Author : RishavMz
+
+
+class Bunker:
+    def __init__(self,table,posx,posy):
+        self.table = table
+        self.power = 0
+        self.health = 100
+        self.posx = posx
+        self.posy = posy
+        self.rad=10
+        self.rangeatt = 0
+        self.type="bunker"
+    def damage(self,force):
+        self.health -= force
+    def draw(self):
+        pygame.draw.circle(self.table.canvas, (139,69,19), (self.posx-self.rad//2, self.posy-self.rad//2), self.rad) 
+        pygame.draw.rect(self.table.canvas, (255,0,0), (self.posx-15,self.posy-25, (self.health), 2))     
+    def attack(self,troops):
+        nearest, nearval = None,100000
+        for i in range(len(troops)):
+            dist = math.sqrt((self.posx-troops[i].posx)**2 + (self.posy-troops[i].posy)**2 )
+            if(dist<= self.rangeatt) and (dist < nearval):
+                nearval = dist
+                nearest = i
+        return nearest        
+
